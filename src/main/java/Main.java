@@ -2,11 +2,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
-    class Main {
+class Main {
         public static void main(String[] args) {
 
+            Scanner scanner = new Scanner(System.in);
+            //сюда можно было бы впихнуть бесконечный цикл через while, но он у меня не работает. TODO: позже понять как и сделать
+            System.out.println("Введите выражение:");
+            String input = scanner.nextLine();
+            String result = calc(input);
+            System.out.println("Ответ: " + result);
+            scanner.close();
         }
+
 
         public static String calc(@NotNull String input) {
             // Маппинг для римских чисел
@@ -123,4 +132,3 @@ import java.util.Map;
             return roman.toString();
         }
     }
-
